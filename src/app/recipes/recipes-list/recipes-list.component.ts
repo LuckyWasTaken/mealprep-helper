@@ -6,7 +6,7 @@ import { Recipe } from '../recipe.model';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipiesListComponent implements OnInit {
+export class RecipesListComponent implements OnInit {
 
   recipes: Recipe[] = [
     new Recipe('Chicken tikka masala', 'Just a test recipe', 'http://assets.kraftfoods.com/recipe_images/opendeploy/173356_640x428.jpg'),

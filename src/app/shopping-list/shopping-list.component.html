@@ -5,8 +5,12 @@
     <hr>
     <ul class="list-group">
       <a class="list-group-item"
-      *ngFor="let ing of ingredients">
+      *ngFor="let ing of ingredients; let index = index">
        {{ing.name}} ({{ing.amount}})
+       <span 
+        style="cursor: pointer" 
+        (click)="onDelete(index)"
+        class="badge">X</span>
       </a>
     </ul>
   </div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,13 +30,14 @@ import { RecipeService } from './recipes/recipe.service';
       ShoppingEditComponent,
       DropdownDirective,
       RecipeDefaultComponent,
-      RecipeEditComponent
+      RecipeEditComponent,
    ],
    imports: [
       BrowserModule,
       FormsModule,
       ReactiveFormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      HttpModule
    ],
    providers: [ShoppingListService
     , RecipeService],

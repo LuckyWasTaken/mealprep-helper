@@ -12,18 +12,15 @@ export class RecipeService {
 
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
-        new Recipe('Chicken tikka masala', 'Just a test recipe',
-         'http://assets.kraftfoods.com/recipe_images/opendeploy/173356_640x428.jpg'
-         , [new Ingredient('chicken legs forsenLUL', 2)]),
-        new Recipe('Breakfast Burritos', 'Probably a good idea to make 60ish of those',
-         'https://skinnyms.com/wp-content/uploads/2016/10/Zucchini-and-Egg-Breakfast-Burrito-Recipe.jpg',
-         [new Ingredient('Expired leftovers', 1),
-          new Ingredient('Tortillas', 10)])
-    ];
+    private recipes: Recipe[] = [new Recipe('Fetching data...', '', '', [])];
 
     getRecipes () {
         return this.recipes.slice();
+    }
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes);
     }
 
     getRecipe (id: number) {

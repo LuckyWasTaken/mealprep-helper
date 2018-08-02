@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from './recipe.service';
+import { SyncService } from '../sync/sync.service';
 
 @Component({
   selector: 'app-recipes',
@@ -9,10 +10,11 @@ import { RecipeService } from './recipe.service';
 export class RecipesComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private syncSrv: SyncService) { }
 
 
   ngOnInit() {
+    this.syncSrv.syncOnAppLoad();
   }
 
 }

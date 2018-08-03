@@ -40,3 +40,4 @@ Thumbs.db
 
 
 /src/app/sync/firebase-url.ts
+/src/app/firebase-setup.ts

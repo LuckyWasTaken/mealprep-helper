@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SyncService } from './sync/sync.service';
+import * as firebase from 'firebase';
+import { config } from './firebase-setup';
+import { AuthService } from './auth/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -13,8 +17,13 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.syncSrv.syncOnAppLoad();
+
+    const { apiKey, authDomain} = config;
+
+    firebase.initializeApp({apiKey, authDomain});
+    this.authService.initialize();
   }
 
-  constructor(private router: Router, private syncSrv: SyncService) {}
+  constructor(private router: Router, private syncSrv: SyncService,
+    private authService: AuthService) {}
 }

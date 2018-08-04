@@ -26,6 +26,10 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
+  getControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
   private initForm() {
     const currRecipe = this.editMode ? this.recipeSrv.getRecipe(this.id) : new Recipe('', '', '', []);
     const {name, description, imagePath, ingredients} = currRecipe;

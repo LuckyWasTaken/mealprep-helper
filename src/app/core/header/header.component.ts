@@ -9,9 +9,13 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent  {
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService) { }
 
     onSignout() {
         this.authService.logout();
+    }
+
+    isAuthenticated() {
+        return this.authService.isAuthenticated();
     }
 }

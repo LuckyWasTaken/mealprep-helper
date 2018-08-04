@@ -8,11 +8,11 @@
                 <li routerLinkActive="active"><a routerLink="/recipes" >Recipes</a></li>
                 <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
             </ul>
-            <ul *ngIf="!authService.isAuthenticated()" class="nav navbar-right navbar-nav">
+            <ul *ngIf="!isAuthenticated()" class="nav navbar-right navbar-nav">
                 <li routerLinkActive="active"><a routerLink="/signup">Sign Up</a></li>
                 <li routerLinkActive="active"><a routerLink="/signin">Sign In</a></li>
             </ul>
-            <ul *ngIf="authService.isAuthenticated()" class="nav navbar-right navbar-nav">
+            <ul *ngIf="isAuthenticated()" class="nav navbar-right navbar-nav">
                 <li><a (click)="onSignout()">Sign Out</a></li>
             </ul>
         </div>

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
     {path: '', redirectTo: 'recipes', pathMatch: 'full'},
+    {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
     {path: 'shopping-list', component: ShoppingListComponent},
 ];
 

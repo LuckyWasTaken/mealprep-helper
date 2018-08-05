@@ -29,16 +29,12 @@ export class SyncService {
 
   pushRecipes(recipes: Recipe[]) {
 
-    this.http.put(config.databaseURL + '/recipes.json' , {
+    this.http.put(config.databaseURL + '/recipes.json' , this.recipeSrv.getRecipes(), {
       params: new HttpParams().set('auth', this.authService.token)
     })
       .subscribe((next) => {
         return next;
       });
-  }
-
-  onRecipesClosed() {
-    this.recipeChangedSub.unsubscribe();
   }
 
 }

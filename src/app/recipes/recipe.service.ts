@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
-import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -27,11 +25,7 @@ export class RecipeService {
         return this.recipes[id];
     }
 
-    addIngredientsToShoppingList (ingredients: Ingredient[]) {
-        this.shoppingSrv.addMultiple(ingredients);
-    }
-
-    constructor(private shoppingSrv: ShoppingListService) { }
+    constructor() { }
 
     addRecipe(recipe: Recipe) {
         this.recipes.push(recipe);

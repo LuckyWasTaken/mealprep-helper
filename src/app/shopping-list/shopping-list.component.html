@@ -5,7 +5,7 @@
     <hr>
     <ul class="list-group">
       <a class="list-group-item"
-      *ngFor="let ing of ingredients; let index = index">
+      *ngFor="let ing of (shoppingListState | async).ingredients; let index = index">
        {{ing.name}} ({{ing.amount}})
        <span 
         style="cursor: pointer" 

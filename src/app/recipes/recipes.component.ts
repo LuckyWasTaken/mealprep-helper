@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RecipeService } from './recipe.service';
 import { SyncService } from '../sync/sync.service';
 
 @Component({
@@ -18,7 +17,6 @@ export class RecipesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.syncSrv.onRecipesClosed();
   }
 
 }

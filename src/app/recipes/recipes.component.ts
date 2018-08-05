@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RecipeService } from './recipe.service';
 import { SyncService } from '../sync/sync.service';
 
@@ -7,7 +7,7 @@ import { SyncService } from '../sync/sync.service';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
 })
-export class RecipesComponent implements OnInit {
+export class RecipesComponent implements OnInit, OnDestroy {
 
 
   constructor(private syncSrv: SyncService) { }
@@ -15,6 +15,10 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
     this.syncSrv.syncOnAppLoad();
+  }
+
+  ngOnDestroy() {
+    this.syncSrv.onRecipesClosed();
   }
 
 }

@@ -18,7 +18,7 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
    ],
    imports: [
       ShoppingListModule,
-      BrowserModule,
+      BrowserModule.withServerTransition({appId: 'Mealprep-helper'}),
       AuthModule,
       AppRoutingModule,
       HttpClientModule,

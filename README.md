@@ -1,6 +1,10 @@
 # MealprepHelper
 
-## Just a simple angular App to keep track of your shopping list for your [mealprepsunday](http://reddit.com/r/mealprepsunday)
+Due to the fact that this project was just an Angular playground for me, it's now
+## DEPRECATED! 
+
+
+Just a simple angular App to keep track of your shopping list for your [mealprepsunday](http://reddit.com/r/mealprepsunday)
 
 ## Development server
 
